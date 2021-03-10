@@ -1,0 +1,36 @@
+@baseURL = http://localhost:3333
+@repositoryId = 0b3f168b-c596-4f69-9747-2596109d1718
+
+### List Respositories
+GET {{baseURL}}/repositories 
+
+### Add repository
+POST {{baseURL}}/repositories
+Content-Type: application/json
+
+{
+	"title": "freeCodeCamp.org", 
+	"url": "https://github.com/freeCodeCamp/freeCodeCamp", 
+	"techs": ["react", "nodejs", "javascript", "d3", "teachers", "community", "education", "programming", "curriculum", "math", "freecodecamp", "learn-to-code", "nonprofits", "careers", "certification"]
+}
+
+### Add repository 2
+POST {{baseURL}}/repositories
+Content-Type: application/json
+
+{
+	"title": "Gitignore Templates", 
+	"url": "https://github.com/github/gitignore", 
+	"techs": ["gitignore", "git"]
+}
+
+### Update repository
+PUT {{baseURL}}/repositories/{{repositoryId}}
+Content-Type: application/json
+
+{
+    "title": "Freely available programming books",
+    "url": "https://github.com/EbookFoundation/free-programming-books",
+    "techs": ["education", "list", "books", "resource", "hacktoberfest"],
+    "likes": 0
+  }
